@@ -1,0 +1,438 @@
+html, body{
+  margin: 0;
+  padding: 0;
+}
+#wrapper{
+  display: flex;
+  flex-direction: column;
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
+  color: white;
+}
+
+/* light vs night button */
+
+* {
+  transition: background-color 0.6s ease, color 1s ease;
+}
+
+#wrapper section {
+  color:  white;  
+}
+#wrapper.classLightMode section {
+  background-color: rgba(255, 255, 255, 0.699); 
+  color:  black;  
+}
+
+#wrapper.classLightMode header, 
+#wrapper.classLightMode nav a{
+  background-color: white; 
+  color: black;
+}
+
+#wrapper.classLightMode nav a:hover{
+  color: rgb(196, 186, 186);
+}
+
+#wrapper.classLightMode .learnMore{
+  background-color: rgba(24, 255, 224, 0.699);
+  color: black;
+}
+
+#wrapper.classLightMode .learnMore:hover{
+  background-color: rgba(0, 150, 130, 0.699);
+}
+
+#wrapper.classLightMode section.dark{
+  background-color: rgba(255, 255, 255, 0.900); 
+}
+
+#wrapper.classLightMode section.darkOtherPage{
+  background-color: rgba(255, 255, 255, 0.900); 
+}
+
+#wrapper.classLightMode section.row{   /*To get rid of the extra black box that was created with "section.row = fr fr".*/
+  background-color: rgba(255, 255, 255, 0); 
+}
+
+#wrapper.classLightMode .dottedBoarder{
+  background-color: rgba(255, 255, 255, 0.699); 
+}
+
+#wrapper.classLightMode footer {
+  background-color: white; 
+  color: black;
+}
+
+header{
+  background-color: #000000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 35px;
+  position: sticky;
+  top: 0;
+}
+
+nav a {
+  font-size: 18px;
+  text-decoration: none;
+  color: white;
+  padding: 40px 65px 40px 65px;
+}
+nav a:hover{
+  color: rgb(151, 141, 141);
+}
+
+
+#homeLink{
+  font-family:'Montez', cursive;
+  font-size: xx-large;
+  padding: 0 75px;
+}
+
+#homeLinkMobile{
+  display:none;
+  }
+
+
+.learnMore{
+  background-color: rgba(24, 255, 224, 0.699);
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 8px;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  margin: 10px 8px 8px 8px;
+}
+
+.learnMore:hover{
+  background-color: rgba(0, 150, 130, 0.699);
+}
+
+/* light vs night button */
+
+#darkModeBox{
+  position: fixed;  /*To place the toggle to the right, outside header and nav*/
+  top: 10px;
+  right: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: rgba(24, 255, 224, 0.699);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+main{
+  background-image: url("img/img-berg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+#mainScania{
+  background-image: url("img/img-scania-sustainability.jpg");
+}
+
+#mainAmf{
+  background-image: url("img/img-pension.jpg");
+}
+
+#mainClimateView{
+background-image: url("img/img-climate.jpg");
+}
+
+section{
+  display: flex;  
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(0,0,0,0.6);
+  padding: 10px 50px 10px 50px;
+  text-align: center;
+  scroll-margin-top: 150px;
+ }
+
+ h1{
+  margin: 190px 0px;
+}
+
+ section.dark{
+  display: grid;  
+  grid-template-columns: 1fr 1fr;
+  background-color: rgba(0,0,0,0.9);
+  align-items: center;
+}
+
+section.light{
+  display: grid;  
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+section.darkOtherPage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0,0,0,0.9);
+  }
+  
+
+section.row{
+background-color: rgba(0,0,0,0); /*To get rid of the extra black box that was created with "section.row = fr fr".*/
+}
+
+
+#sustainabilityPic{
+  width: 70%; 
+  border-radius: 8px;
+}
+
+#mobilPic{
+  width: 20%; 
+  border-radius: 20px;
+}
+
+.mobilPicMobil{
+  display: none;
+  width: 20%; 
+  border-radius: 20px;
+}
+
+.climateButterfly{
+  width: 70%; 
+  border-radius: 8px;
+  margin: 15px 0px;
+}
+
+#profilPic{
+margin: 35px;
+}
+
+.dottedBoarder{
+border-style: dotted;
+width: 600px;  
+padding: 20px;
+border-color: plum;
+background-color: rgba(0,0,0,0.6);
+}
+
+#img-scania{
+  width: 45%;
+}
+
+#gallery{
+  display: grid;  
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2%;
+  align-items: center;
+}
+
+.img-box{
+  width: 100%;
+  border: 1px solid black;
+  border-radius: 8px;
+
+}
+
+
+/* amf.html */
+#mobilPicAmf{
+  height: 300px;
+  width: 150px;
+  border-radius: 20px;
+  margin: 12px;
+}
+
+/* climateView.html */
+#gallery2{
+  display: grid;  
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  align-items: center;
+  margin: 16px;
+}
+
+.img-box2{
+  width: 35%;
+  border: 1px solid black;
+  border-radius: 8px;
+}
+.img-box3{
+  width: 90%;
+  border: 1px solid black;
+  border-radius: 8px;
+}
+
+footer {
+  display: flex;
+  background-color: #000000;
+  color: FFFFFF;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 0 30px 0;
+}
+
+footer a{
+  font-size: 30px;
+  color: rgba(0, 150, 130);
+}
+
+
+#toTopMobil{
+  display: none;
+}
+
+.dark-mode {
+  background-color: white;
+  color: black;
+}
+
+/* Mobil version */
+@media (max-width: 600px) {
+
+  header a, header {
+    float: none;
+    display: block;
+    text-align: center;
+    padding: 0px;
+    position: relative;
+  }
+
+  #darkModeBox{
+  position: absolute;  /*absolute - to get the toggle inside the header*/
+  }
+
+  nav a{
+    margin: 5%;
+  }
+
+  #homeLink{
+  display: none;
+  }
+  
+  #homeLinkMobile{
+  display:block;
+  font-size: x-large;
+  }
+
+  #navButton{
+    display:inline-block;
+    width: 22%;
+ 
+  }
+
+  /*I tried to fix the background img in mobil version*/
+  main, #mainScania, #mainAmf, #mainClimateView{
+    background-size: 100%;
+    background-color: #000000;
+  }
+
+  section{
+    padding: 20px;
+  }
+
+  section.dark, section.light, section.row, section.darkOtherPage, #gallery, #gallery2 {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    }
+
+  /* picture in browser - amf */
+  #mobilPic{
+    width: 50%;
+    display: none; 
+  }
+
+  .mobilPicMobil{
+    width: 30%; 
+    display: block;
+    display:inline-block;
+    margin-top: 5%;
+  }
+
+  /* All the picture with 100% */
+  .climateButterfly, #sustainabilityPic, #profilPic, .dottedBoarde, #img-scania, .img-box3, .dottedBoarder {
+    width: 100%;
+  }
+
+  /* Scania picture */
+  .img-box{
+    width: 100%;
+    margin-top: 5%;
+  }
+
+/* Climate View picture */
+
+  .img-box2{
+    width: 90%;
+  }
+
+  #toTopMobil{
+    display:block;
+  }
+
+}
